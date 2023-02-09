@@ -2,11 +2,7 @@ import React from "react"
 import { useNavigate, NavItem, Nav } from "react-router-dom"
 
 const Home = ({ devProps }) => {
-  console.log("logged_in:", devProps.logged_in)
-  console.log("current_user:", devProps.current_user)
-  console.log("new_user_route:", devProps.new_user_route)
-  console.log("sign_in_route:", devProps.sign_in_route)
-  console.log("sign_out_route:", devProps.sign_out_route)
+
   const navigate = useNavigate ()
   const viewAlllistings =() => {
     navigate ("/apartmentindex")

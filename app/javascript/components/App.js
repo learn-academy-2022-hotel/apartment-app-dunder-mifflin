@@ -12,12 +12,7 @@ import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 
 const App = (props) => {
-  console.log("logged_in:", props.logged_in)
-  console.log("current_user:", props.current_user)
-  console.log("new_user_route:", props.new_user_route)
-  console.log("sign_in_route:", props.sign_in_route)
-  console.log("sign_out_route:", props.sign_out_route)
-
+ 
   const [apartments, setApartments] = useState([])
 
   useEffect(() => {
