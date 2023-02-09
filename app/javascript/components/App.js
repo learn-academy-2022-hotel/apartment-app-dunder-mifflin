@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound"
 
 
 const App = (props) => {
+ 
   const [apartments, setApartments] = useState([])
 
   useEffect(() => {
