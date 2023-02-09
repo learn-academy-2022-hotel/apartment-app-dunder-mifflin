@@ -2,7 +2,7 @@ import React from "react"
 import {Card, CardTitle, CardText, CardBody, CardSubtitle, Button} from 'reactstrap'
 
 const ApartmentIndex = ({ apartments }) => {
-  console.log();
+  
   return (
     <main>
       {apartments?.map((apartment, index) => {

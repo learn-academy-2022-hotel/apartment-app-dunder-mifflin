@@ -18,11 +18,28 @@ const Navigation = ({
           </NavLink>
         </NavItem>
         {logged_in && (
+          <>
           <NavItem>
             <a href={sign_out_route} className="nav-link">
               Sign Out
             </a>
           </NavItem>
+          <NavItem>
+          <NavLink to="/apartmentnew" className="nav-link">
+            Add New Apartment
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/userapartmentindex" className="nav-link">
+            My Apartments
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/apartmentindex" className="nav-link">
+            Apartment Listings
+          </NavLink>
+        </NavItem>
+        </>
         )}
         {!logged_in && (
           <NavItem>
@@ -37,6 +54,13 @@ const Navigation = ({
               Sign Up
             </a>
           </NavItem>
+        )}
+        {!logged_in && (
+           <NavItem>
+           <NavLink to="/apartmentindex" className="nav-link">
+             Apartment Listings
+           </NavLink>
+         </NavItem>
         )}
       </Nav>
     </>
