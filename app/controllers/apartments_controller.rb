@@ -6,12 +6,11 @@ class ApartmentsController < ApplicationController
 
     def create
         apartment = Apartment.create(apartment_params)
-        # if apartment.valid?
+        if apartment.valid?
             render json: apartment
-            p "APARTMENT =>", apartment
-        # else
-        #     render json: apartment.errors, status: 422
-        # end
+        else
+            render json: apartment.errors, status: 422
+        end
     end
 
     private 
