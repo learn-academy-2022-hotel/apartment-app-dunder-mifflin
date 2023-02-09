@@ -10,10 +10,11 @@ import ApartmentNew from "./pages/ApartmentNew"
 import ApartmentShow from "./pages/ApartmentShow"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
+import UserApartmentIndex from "./pages/UserApartmentIndex"
 
 
 const App = (props) => {
- 
+
   const [apartments, setApartments] = useState([])
 
   useEffect(() => {
@@ -33,11 +34,12 @@ const App = (props) => {
     <BrowserRouter>
       <Header {...props} />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home {...props} />} />
         <Route path="/apartmentindex" element={<ApartmentIndex apartments={apartments} />} />
         <Route path="/apartmentshow" element={<ApartmentShow />} />
         <Route path="/apartmentnew" element={<ApartmentNew />} />
         <Route path="/apartmentedit" element={<ApartmentEdit />} />
+        <Route path="/userapartmentindex" element={<UserApartmentIndex />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
