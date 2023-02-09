@@ -12,6 +12,7 @@ import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 
 const App = (props) => {
+ 
   const [apartments, setApartments] = useState([])
 
   useEffect(() => {
@@ -31,12 +32,12 @@ const App = (props) => {
     <BrowserRouter>
       <Header {...props} />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home devProps={props}/>} />
         <Route path="/apartmentindex" element={<ApartmentIndex />} />
         <Route path="/apartmentshow" element={<ApartmentShow />} />
         <Route path="/apartmentnew" element={<ApartmentNew />} />
         <Route path="/apartmentedit" element={<ApartmentEdit />} />
-        <Route element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
