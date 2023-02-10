@@ -10,7 +10,7 @@ import ApartmentNew from "./pages/ApartmentNew"
 import ApartmentShow from "./pages/ApartmentShow"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
-import UserApartmentIndex from "./pages/UserApartmentIndex"
+import ProtectedApartmentIndex from "./pages/ProtectedApartmentIndex"
 
 
 const App = (props) => {
@@ -20,14 +20,14 @@ const App = (props) => {
   useEffect(() => {
     readApartments()
   }, [])
-
+  
   const readApartments = () => {
     fetch("/apartments")
-      .then((response) => response.json())
-      .then((payload) => {
-        setApartments(payload)
-      })
-      .catch((error) => console.log(error))
+    .then((response) => response.json())
+    .then((payload) => {
+      setApartments(payload)
+    })
+    .catch((error) => console.log(error))
   }
 
   return (
@@ -39,7 +39,7 @@ const App = (props) => {
         <Route path="/apartmentshow" element={<ApartmentShow />} />
         <Route path="/apartmentnew" element={<ApartmentNew />} />
         <Route path="/apartmentedit" element={<ApartmentEdit />} />
-        <Route path="/userapartmentindex" element={<UserApartmentIndex />} />
+        <Route path="/userapartmentindex" element={<ProtectedApartmentIndex apartments={apartments} currentUser={props.current_user}/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
